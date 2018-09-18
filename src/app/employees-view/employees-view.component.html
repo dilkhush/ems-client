@@ -1,0 +1,14 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">EMS</a>
+   <a class="navbar-brand" href="#">{{currentUser.name }}</a>
+  <a class="navbar-brand pull-right" href="#" [routerLink]="['/login']">Logout</a>
+</nav>
+
+<div class="card" *ngIf="employee">
+  <div class="card-body">
+    <h5 class="card-title">{{employee.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{employee.email}}</h6>
+    <a class="card-link" routerLink="/employees/{{employee.id}}/edit">Edit</a>
+    <a class="card-link" href='#' (click)='delete(employee.id)'>Delete</a>
+  </div>
+</div>

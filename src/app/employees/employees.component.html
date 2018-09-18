@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    Employees
+    <a class="card-link" style='float: right;' routerLink="/employees/new">New</a>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <th scope="row">{{employee.id}}</th>
+          <td>{{employee.name}}</td>
+          <td>{{employee.email}}</td>
+          <td>
+            <a class="card-link" routerLink="/employees/{{employee.id}}">View</a>
+            <a class="card-link" routerLink="/employees/{{employee.id}}/edit">Edit</a>
+            <a class="card-link" href='#' (click)='delete(employee.id)'>Delete</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
