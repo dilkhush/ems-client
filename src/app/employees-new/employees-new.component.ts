@@ -3,6 +3,7 @@ import { UserService, EmployeeService, AlertService } from '../_services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User, Employee } from '../_models';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-employees-new',
@@ -22,6 +23,7 @@ export class EmployeesNewComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService,
     private router: Router,
+    private location: Location,
     private employeeService: EmployeeService) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }

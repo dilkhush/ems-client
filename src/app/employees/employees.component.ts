@@ -24,8 +24,8 @@ export class EmployeesComponent implements OnInit {
 
   delete(id: number) {
     this.employeeService.destroy(id).subscribe(employee => {
-      let employee: Employ = of(this.employees.find(employee => employee.id === id));
-      this.employees.pop(employee);
+      let delete_employee = of(this.employees.find(employee => employee.id === id));
+      this.employees.pop(delete_employee);
     })
   }
 

@@ -14,12 +14,11 @@ export class AuthenticationService {
 
     login(email: string, password: string) {
         return this.http.post(`${this.url}/users/sign_in`, { email: email, password: password })
-            .pipe(map(user => {
+            .pipe(map(user: User => {
                 if (user && user.authentication_token) {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                     localStorage.setItem('auth_token', user.authentication_token);
                 }
-
                 return user;
             }));
     }
